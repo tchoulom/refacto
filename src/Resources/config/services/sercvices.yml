@@ -1,0 +1,16 @@
+services:
+  refacto.templare.manager:
+      class: 'Refacto\TemplateManager'
+      calls:
+          - [setQuoteHandler, ['@refacto.quote.handler']]
+          - [setDestinationHandler, ['@refacto.destination.handler']]
+          - [setUserHandler, ['@refacto.user.handler']]
+
+  refacto.quote.handler:
+      class: 'Refacto\QuoteHandler'
+
+  refacto.destination.handler:
+    class: 'Refacto\DestinationHandler'
+
+  refacto.user.handler:
+    class: 'Refacto\UserHandler'
